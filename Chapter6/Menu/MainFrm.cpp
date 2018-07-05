@@ -133,7 +133,7 @@ void CMainFrame::Dump(CDumpContext& dc) const
 void CMainFrame::OnTest() 
 {
 	// TODO: Add your command handler code here
-	MessageBox("MainFrame Clicked");
+	MessageBox(_T("MainFrame Clicked"));
 }
 
 void CMainFrame::OnUpdateEditCut(CCmdUI* pCmdUI) 
@@ -156,5 +156,5 @@ void CMainFrame::OnUpdateFileNew(CCmdUI* pCmdUI)
 void CMainFrame::OnShow() 
 {
 	// TODO: Add your command handler code here
-	MessageBox("Main show");
+	MessageBox(_T("Main show"));
 }

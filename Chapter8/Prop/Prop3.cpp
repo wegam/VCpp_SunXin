@@ -56,10 +56,10 @@ BOOL CProp3::OnInitDialog()
 	CPropertyPage::OnInitDialog();
 	
 	// TODO: Add extra initialization here
-	((CComboBox*)GetDlgItem(IDC_COMBO3))->AddString("1000元以下");
-	((CComboBox*)GetDlgItem(IDC_COMBO3))->AddString("1000-2000元");
-	((CComboBox*)GetDlgItem(IDC_COMBO3))->AddString("2000-3000元");
-	((CComboBox*)GetDlgItem(IDC_COMBO3))->AddString("3000元以上");
+	((CComboBox*)GetDlgItem(IDC_COMBO3))->AddString(_T("1000元以下"));
+	((CComboBox*)GetDlgItem(IDC_COMBO3))->AddString(_T("1000-2000元"));
+	((CComboBox*)GetDlgItem(IDC_COMBO3))->AddString(_T("2000-3000元"));
+	((CComboBox*)GetDlgItem(IDC_COMBO3))->AddString(_T("3000元以上"));
 
 	((CComboBox*)GetDlgItem(IDC_COMBO3))->SetCurSel(0);
 	return TRUE;  // return TRUE unless you set the focus to a control

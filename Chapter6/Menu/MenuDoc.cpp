@@ -85,5 +85,5 @@ void CMenuDoc::Dump(CDumpContext& dc) const
 void CMenuDoc::OnTest() 
 {
 	// TODO: Add your command handler code here
-	AfxMessageBox("Doc Clicked!");
+	AfxMessageBox(_T("Doc Clicked!"));
 }

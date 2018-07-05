@@ -24,7 +24,7 @@ CSettingDlg::CSettingDlg(CWnd* pParent /*=NULL*/)
 	//}}AFX_DATA_INIT
 	m_clr=RGB(255,0,0);
 	m_brush.CreateSolidBrush(RGB(0,0,255));
-	m_font.CreatePointFont(200,"华文行楷");
+	m_font.CreatePointFont(200,_T("华文行楷"));
 }
 
 

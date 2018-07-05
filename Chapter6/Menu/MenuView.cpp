@@ -165,7 +165,7 @@ void CMenuView::OnRButtonDown(UINT nFlags, CPoint point)
 void CMenuView::OnShow() 
 {
  	// TODO: Add your command handler code here
- 	MessageBox("View show");
+ 	MessageBox(L"View show");
 	
 }
 

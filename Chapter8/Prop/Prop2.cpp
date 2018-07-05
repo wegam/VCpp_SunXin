@@ -77,7 +77,7 @@ LRESULT CProp2::OnWizardNext()
 		return CPropertyPage::OnWizardNext();
 	else
 	{
-		MessageBox("请选择你的兴趣爱好！");
+		MessageBox(_T("请选择你的兴趣爱好！"));
 		return -1;
 	}
 }

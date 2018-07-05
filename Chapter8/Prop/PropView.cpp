@@ -58,31 +58,31 @@ void CPropView::OnDraw(CDC* pDC)
 	ASSERT_VALID(pDoc);
 	// TODO: add draw code for native data here
 	CFont font;
-	font.CreatePointFont(300,"华文行楷");
+	font.CreatePointFont(300,_T("华文行楷"));
 
 	CFont *pOldFont;
 	pOldFont=pDC->SelectObject(&font);
 
 	CString strTemp;
-	strTemp="你的职业：";
+	strTemp=_T("你的职业：");
 
 	switch(m_iOccupation)
 	{
 	case 0:
-		strTemp+="程序员";
+		strTemp+=_T("程序员");
 		break;
 	case 1:
-		strTemp+="系统工程师";
+		strTemp+=_T("系统工程师");
 		break;
 	case 2:
-		strTemp+="项目经理";
+		strTemp+=_T("项目经理");
 		break;
 	default:
 		break;
 	}
 	pDC->TextOut(0,0,strTemp);
 
-	strTemp="你的工作地点：";
+	strTemp= _T("你的工作地点：");
 	strTemp+=m_strWorkAddr;
 
 	TEXTMETRIC tm;
@@ -90,26 +90,26 @@ void CPropView::OnDraw(CDC* pDC)
 
 	pDC->TextOut(0,tm.tmHeight,strTemp);
 
-	strTemp="你的兴趣爱好：";
+	strTemp= _T("你的兴趣爱好：");
 	if(m_bLike[0])
 	{
-		strTemp+="足球 ";
+		strTemp+= _T("足球 ");
 	}
 	if(m_bLike[1])
 	{
-		strTemp+="篮球 ";
+		strTemp+= _T("篮球 ");
 	}
 	if(m_bLike[2])
 	{
-		strTemp+="排球 ";
+		strTemp+= _T("排球 ");
 	}
 	if(m_bLike[3])
 	{
-		strTemp+="游泳 ";
+		strTemp+= _T("游泳 ");
 	}
 	pDC->TextOut(0,tm.tmHeight*2,strTemp);
 
-	strTemp="你的薪资水平：";
+	strTemp= _T("你的薪资水平：");
 	strTemp+=m_strSalary;
 	pDC->TextOut(0,tm.tmHeight*3,strTemp);
 
@@ -143,7 +143,7 @@ CPropDoc* CPropView::GetDocument() // non-debug version is inline
 void CPropView::OnPropertysheet() 
 {
 	// TODO: Add your command handler code here
-	CPropSheet propSheet("属性表单");
+	CPropSheet propSheet(_T("属性表单"));
 	propSheet.SetWizardMode();
 	if(ID_WIZFINISH==propSheet.DoModal())
 	{

@@ -166,13 +166,13 @@ void CTestDlg::OnNumber1()
 {
 	// TODO: Add your control notification handler code here
 	CString str;
-	if(GetDlgItem(IDC_NUMBER1)->GetWindowText(str), str == "Number1:")
+	if(GetDlgItem(IDC_NUMBER1)->GetWindowText(str), str == _T("Number1:"))
 	{
-		GetDlgItem(IDC_NUMBER1)->SetWindowText("数值1:");
+		GetDlgItem(IDC_NUMBER1)->SetWindowText(_T("数值1:"));
 	}
 	else
 	{
-		GetDlgItem(IDC_NUMBER1)->SetWindowText("Number1:");
+		GetDlgItem(IDC_NUMBER1)->SetWindowText(_T("Number1:"));
 	}
 }
 
@@ -180,13 +180,13 @@ void CTestDlg::OnButton1()
 {
 	// TODO: Add your control notification handler code here
 	CString str;
-	if(GetDlgItemText(IDC_BUTTON1, str), str == "收缩<<")
+	if(GetDlgItemText(IDC_BUTTON1, str), str == _T("收缩<<"))
 	{
-		SetDlgItemText(IDC_BUTTON1,"扩展>>");
+		SetDlgItemText(IDC_BUTTON1,_T("扩展>>"));
 	}
 	else
 	{
-		SetDlgItemText(IDC_BUTTON1,"收缩<<");
+		SetDlgItemText(IDC_BUTTON1,_T("收缩<<"));
 	}
 
 	static CRect rectLarge;
@@ -203,7 +203,7 @@ void CTestDlg::OnButton1()
 		rectSmall.right=rectLarge.right;
 		rectSmall.bottom=rectSeparator.bottom;
 	}
-	if(str=="收缩<<")
+	if(str==_T("收缩<<"))
 	{
 		SetWindowPos(NULL,0,0,rectSmall.Width(),rectSmall.Height(),
 			SWP_NOMOVE | SWP_NOZORDER);

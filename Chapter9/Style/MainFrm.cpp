@@ -197,7 +197,7 @@ void CMainFrame::OnTimer(UINT nIDEvent)
 void CMainFrame::OnTest() 
 {
 	// TODO: Add your command handler code here
-	MessageBox("test");
+	MessageBox(_T("test"));
 }
 
 void CMainFrame::OnViewNewtoolbar() 

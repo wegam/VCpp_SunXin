@@ -115,7 +115,7 @@ void CMenu2View::OnChar(UINT nChar, UINT nRepCnt, UINT nFlags)
 		if(0 == ++m_nIndex )
 		{
 			m_menu.CreatePopupMenu();
-			GetParent()->GetMenu()->AppendMenu(MF_POPUP,(UINT)m_menu.m_hMenu,"PhoneBook");
+			GetParent()->GetMenu()->AppendMenu(MF_POPUP,(UINT)m_menu.m_hMenu,_T("PhoneBook"));
 			GetParent()->DrawMenuBar();
 		}
 		m_menu.AppendMenu(MF_STRING, IDM_PHONE1,m_strLine.Left(m_strLine.Find(' ')));
@@ -125,7 +125,7 @@ void CMenu2View::OnChar(UINT nChar, UINT nRepCnt, UINT nFlags)
 	}
 	else
 	{
-		m_strLine += nChar;
+		m_strLine += (char)nChar;
 		dc.TextOut(0,0,m_strLine);
 	}
 	CView::OnChar(nChar, nRepCnt, nFlags);

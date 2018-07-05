@@ -7,7 +7,7 @@
 #include "FileDoc.h"
 #include "FileView.h"
 
-#include <fstream.h>
+#include <iostream>			//#include <iostream.h>应该修改为#include <iostream>
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -155,9 +155,9 @@ void CFileView::OnFileWrite()
 	file.Write("http://www.sunxin.org",strlen("http://www.sunxin.org"));
 	file.Close();*/
 	CFileDialog fileDlg(FALSE);
-	fileDlg.m_ofn.lpstrTitle="我的文件保存对话框";
-	fileDlg.m_ofn.lpstrFilter="Text Files(*.txt)\0*.txt\0All Files(*.*)\0*.*\0\0";
-	fileDlg.m_ofn.lpstrDefExt="txt";
+	fileDlg.m_ofn.lpstrTitle=_T("我的文件保存对话框");
+	fileDlg.m_ofn.lpstrFilter= _T("Text Files(*.txt)\0*.txt\0All Files(*.*)\0*.*\0\0");
+	fileDlg.m_ofn.lpstrDefExt= _T("txt");
 	if(IDOK==fileDlg.DoModal())
 	{
 		CFile file(fileDlg.GetFileName(),CFile::modeCreate | CFile::modeWrite);
@@ -216,8 +216,8 @@ void CFileView::OnFileRead()
 	MessageBox(pBuf);*/
 
 	CFileDialog fileDlg(TRUE);
-	fileDlg.m_ofn.lpstrTitle="我的文件打开对话框";
-	fileDlg.m_ofn.lpstrFilter="Text Files(*.txt)\0*.txt\0All Files(*.*)\0*.*\0\0";
+	fileDlg.m_ofn.lpstrTitle= _T("我的文件打开对话框");
+	fileDlg.m_ofn.lpstrFilter= _T("Text Files(*.txt)\0*.txt\0All Files(*.*)\0*.*\0\0");
 	
 	if(IDOK==fileDlg.DoModal())
 	{
@@ -238,10 +238,10 @@ void CFileView::OnRegWrite()
 {
 	// TODO: Add your command handler code here
 	HKEY hKey;
-	RegCreateKey(HKEY_LOCAL_MACHINE,"Software\\http://www.sunxin.org\\admin",&hKey);
-	RegSetValue(hKey,NULL,REG_SZ,"zhangsan",strlen("zhangsan"));
+	RegCreateKey(HKEY_LOCAL_MACHINE, _T("Software\\http://www.sunxin.org\\admin"),&hKey);
+	RegSetValue(hKey,NULL,REG_SZ, _T("zhangsan"),strlen(_T("zhangsan").length()));
 	DWORD dwAge=30;
-	RegSetValueEx(hKey,"age",0,REG_DWORD,(CONST BYTE*)&dwAge,4);
+	RegSetValueEx(hKey, _T("age"),0,REG_DWORD,(CONST BYTE*)&dwAge,4);
 	RegCloseKey(hKey);
 }
 
@@ -255,12 +255,12 @@ void CFileView::OnRegRead()
 	MessageBox(pBuf);	
 	*/
 	HKEY hKey;
-	RegOpenKey(HKEY_LOCAL_MACHINE,"Software\\http://www.sunxin.org\\admin",&hKey);
+	RegOpenKey(HKEY_LOCAL_MACHINE, _T("Software\\http://www.sunxin.org\\admin"),&hKey);
 	DWORD dwType;
 	DWORD dwValue;
 	DWORD dwAge;
-	RegQueryValueEx(hKey,"age",0,&dwType,(LPBYTE)&dwAge,&dwValue);
+	RegQueryValueEx(hKey, _T("age"),0,&dwType,(LPBYTE)&dwAge,&dwValue);
 	CString str;
-	str.Format("age=%d",dwAge);
+	str.Format(_T("age=%d"),dwAge);
 	MessageBox(str);
 }

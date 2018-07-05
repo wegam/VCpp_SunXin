@@ -59,12 +59,12 @@ LRESULT CProp1::OnWizardNext()
 	UpdateData();
 	if(m_occupation == -1)
 	{
-		MessageBox("请选择你的职业！");
+		MessageBox(_T("请选择你的职业！"));
 		return -1;
 	}
 	if(m_workAddr == "")
 	{
-		MessageBox("请选择你的工作地点！");
+		MessageBox(_T("请选择你的工作地点！"));
 		return -1;
 	}
 	return CPropertyPage::OnWizardNext();
@@ -75,9 +75,9 @@ BOOL CProp1::OnInitDialog()
 	CPropertyPage::OnInitDialog();
 	
 	// TODO: Add extra initialization here
-	((CListBox*)GetDlgItem(IDC_LIST1))->AddString("北京");
-	((CListBox*)GetDlgItem(IDC_LIST1))->AddString("天津");
-	((CListBox*)GetDlgItem(IDC_LIST1))->AddString("上海");
+	((CListBox*)GetDlgItem(IDC_LIST1))->AddString(_T("北京"));
+	((CListBox*)GetDlgItem(IDC_LIST1))->AddString(_T("天津"));
+	((CListBox*)GetDlgItem(IDC_LIST1))->AddString(_T("上海"));
 	
 	return TRUE;  // return TRUE unless you set the focus to a control
 	              // EXCEPTION: OCX Property Pages should return FALSE

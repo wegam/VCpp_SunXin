@@ -122,7 +122,7 @@ void CMainFrame::Dump(CDumpContext& dc) const
 
 void CMainFrame::OnHello()
 {
-	MessageBox("Hello");
+	MessageBox(_T("Hello"));
 }
 
 
