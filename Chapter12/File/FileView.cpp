@@ -230,6 +230,7 @@ void CFileView::OnFileRead()
 		file.Read(pBuf,dwFileLen);
 		file.Close();
 		MessageBox(pBuf);
+
 	}
 
 }
